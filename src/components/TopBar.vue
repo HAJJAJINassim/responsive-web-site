@@ -8,9 +8,20 @@
 </template>
 <script>
 export default {
+    data:function(){
+        return{
+            show:true
+        }
+    },
     methods:{
         openSideBar:function(){
-            this.$emit("open-side-bar");
+            if (this.show) {
+                document.getElementById('sidebar').style.display="none";
+                this.show=false
+            }else{
+                document.getElementById('sidebar').style.display="block";
+                this.show=true
+            }
             
         }
     }
@@ -24,7 +35,8 @@ export default {
     height: 100%;
     padding: 0;
     margin: 0;
-    background-color:#da1b1b;
+    background-color: #da1b1b;
+
    
     
 }
@@ -35,15 +47,15 @@ export default {
     float: left;
 } 
 .bar a{
-    padding: 0px 10px;
+     line-height: 1rem;
+    font-size: 1.05rem;
+    
     text-decoration: none;
-    color: #f2f2f2;
-    text-align: center;
-    font-size: 12px;
+    color: whitesmoke;
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
-    padding: 23px 10px;
-    margin: 4px;
+    padding: 10px 20px;
+    margin: 7px;
 }
 .bar a:hover {
   background-color: #da4444;
