@@ -54,7 +54,7 @@ h1{
     margin-top:0;
     margin-bottom: 20px;
     color:#fff;
-    font-size: 200%;
+    font-size: 220%;
     word-spacing: 4px;
     letter-spacing: 3px;
 }
