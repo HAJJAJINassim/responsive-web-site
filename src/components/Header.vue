@@ -35,6 +35,7 @@ header{
   background-size: cover;
   background-position: center;
   height: 100vh;
+  background-attachment: fixed;
 }
 .hero-text-box{
     background-color: goldvis;
@@ -60,7 +61,7 @@ h1{
 }
 
 
-.btn{
+.btn,input[type=submit]{
     display: inline-block;
     padding: 10px 30px;
     font-weight: 500;
@@ -76,13 +77,14 @@ h1{
 /*-------------------------------------- */
 
 
-.btn-full:link, .btn-full:visited{
+.btn-full:link, .btn-full:visited, input[type=submit]{
     background: #e67e22;
     border: 1px solid #d6c1af;  
     font-weight: 100;
     transition: background-color 0.2s, border 0.5s;
+    font-size: 90%;
 }
-.btn-full:hover{
+.btn-full:hover,input[type=submit]:hover{
     background: #f7b731;
 }
 .btn-ghost{
