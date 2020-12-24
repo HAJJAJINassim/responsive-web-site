@@ -81,7 +81,7 @@ export default {
 <style>
 
 .section-cities{
-  height: 90vh;
+  
 }
 .cities-ul{
   text-decoration: none;
@@ -89,6 +89,7 @@ export default {
 }
 .cities-ul li div:first-child{
   margin: 10px 5px;
+  
 }
 .city-img{
   height: 100%;
@@ -101,7 +102,6 @@ export default {
   margin-left: 8px;
 }
 .city-desc {
-  
   margin : 17px 0px;
   font-size: 110%;
 }

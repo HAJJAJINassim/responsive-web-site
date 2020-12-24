@@ -1,0 +1,145 @@
+/* big tablets to 1200 (widths smaller than 1140 row) */
+@media only screen and (max-width:1200px){
+    .hero-text-box{
+        width: 100%;
+        padding: 0% 2%;
+    }
+    
+    .row{
+        padding: 0% 2% ;
+    }
+   
+}
+
+
+/* small tablets to big tablets from 768px to 1023*/
+@media only screen and (max-width:1023px){
+    body{
+        font-size: 17px;
+    }
+    section{
+        padding: 60px 0px;
+    }
+    .span-1-of-4 {
+        width: 25%; 
+    }
+    .step div{
+        padding: 12px;
+        font-size: 130%;
+    }
+    .app-screen{
+        width: 55%; 
+    }
+    .section-form .row {
+        margin-bottom: 10px;
+    }
+    .contact-form .row div:first-child{
+        margin-top: 9px;
+    }
+      
+      .step p{ font-size: 90%;
+        padding-top: 5gpx;
+    }
+      .step:last-of-type{ margin-bottom: 60px;}
+      .steps-box:first-child{margin-top: 10px;}
+      .steps-box:last-child{margin-top: 40px; }
+      .city-desc {
+        margin : 15px 0px;
+        font-size: 90%;
+    }
+      .city-icon{
+        margin-right: 15px;
+        font-size: 100%;
+    }
+    .plan-box{
+        width: 98%;
+        margin-left: 0%;    
+    }
+    .span-1-of-3 {
+        width: 33%; 
+    }
+    .plan-price{
+        font-size: 250%;
+    }
+    .plan-price span{
+        font-size: 40%;
+    }
+    .contact-form{
+        width: 80%;
+        margin: 0 20%;
+    }
+}
+
+
+/* small phones to small tablets from 481 to 767 px*/
+@media only screen and (max-width:767px){
+    body{
+        font-size: 16px;
+    }
+    section{
+        padding:30px 0;
+    }
+    .row,.hero-text-box{
+        padding: 0 4%;
+    }
+    .col{
+        width:100%
+    }
+    h1{
+        font-size: 170%;
+    }
+    h2{
+        font-size: 140%;
+    }
+    .main-navigation{
+        display: none;
+    }
+    .long-copy{
+        width: 100%;
+        margin-left: 0%;
+    }
+    .section-features div:last-child div{
+        margin-bottom: 30px;
+    }
+    .box-inside h3{
+        margin-bottom: 5px;
+    }
+    .step{
+        margin-bottom: 30px;
+    }
+    .step:last-of-type{ margin-bottom: 60px;}
+    .steps-box:first-child{margin-top: 10px;
+    text-align: center;}
+    .steps-box:last-child{margin-top: 20px; }
+    .step div{
+        width: 45px;
+        height: 45px;
+        padding: 9px;
+        font-size: 120%;
+        margin-right: 15px;
+      }
+      .app-screen{
+        width: 45%; 
+    }
+    .contact-form{
+        width: 90%;
+        margin-left: 5%;
+    }
+   
+   
+   
+}
+
+
+/* from 0 to 480 px*/
+@media only screen and (max-width:480px){
+    .contact-form{
+        width: 100%;
+        margin: 0%;
+    }
+    section{
+        padding: 25px 0px;
+        
+    }
+}
+

@@ -8,7 +8,7 @@
             <div class="plan-box">
               <div>
                 <h3>Premium</h3>
-                <p class="plan-price"> 399$ <span>/ meal</span></p>
+                <p class="plan-price"> 399$ <span>/ mounth</span></p>
                 <p class="plan-price-meal">That’s only 13.30$ per meal</p>
               </div>
 
@@ -30,7 +30,7 @@
             <div class="plan-box">
               <div>
                 <h3>Pro</h3>
-                <p class="plan-price"> 149$ <span>/ meal</span></p>
+                <p class="plan-price"> 149$ <span>/ mounth</span></p>
                 <p class="plan-price-meal">That’s only 14.90$ per meal</p>
               </div>
 
@@ -52,7 +52,7 @@
             <div class="plan-box">
               <div>
                 <h3>Starter</h3>
-                <p class="plan-price"> 19$ <span>/ meal</span></p>
+                <p class="plan-price"> 19$ <span>/ mounth</span></p>
                 <p class="plan-price-meal"> <pre> </pre> </p>
               </div>
 

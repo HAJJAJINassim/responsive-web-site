@@ -50,7 +50,7 @@ background-color:#f4f4f4 ;
   
 }
 .app-screen{
-  width: 40%;  
+  width: 45%; 
 }
 .step{
   margin-bottom: 50px;
@@ -71,6 +71,7 @@ background-color:#f4f4f4 ;
   float: left;
   margin-right: 20px;
 }
+
 .btn-app img{
   height: 50px;
   width: auto;

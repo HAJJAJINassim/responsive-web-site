@@ -1,8 +1,9 @@
 <template>
 <header id="head">
-    <nav>
+    <nav v-bind:class="{'nav-white':sticky}" class="">
         <div class="row">
             <img class="logo-white" src="../assets/image/logo-white.png" alt="">
+            <img class="logo" src="../assets/image/logo.png" alt="">
             <ul class="main-navigation">
                 <li><a href="">Food delivery</a></li>
                 <li><a href="">How it works</a> </li>
@@ -12,6 +13,7 @@
 
         </div>
     </nav>
+    
     <div class="hero-text-box">
         <h1>Goodbye junk food.<br> Hello super healthy meals.</h1>
         <a class="btn btn-full" href="#">I’m hungry</a>
@@ -24,7 +26,33 @@
 <script>
 
 export default {
+    data:function(){
+        return {
+            sticky:false
+        };
+    },
+    methods:{
+        handlScroll(){
+           var topScreen = window.pageYOffset;
+            /*console.log(window.innerHeight);*/
+            var seuil =document.getElementsByClassName("section-features")[0].offsetTop;
+            if(topScreen > seuil){
+                this.sticky=true;
+            }else{
+                this.sticky=false;
+            }
+            console.log(this.sticky);
+        }
+    },
 
+    created:function(){
+        console.log("Created");
+        window.addEventListener('scroll',this.handlScroll);
+        console.log(window.pageYOffset);
+    },
+    destroyed:function(){
+        window.removeEventListener('scroll',this.handlScroll);
+    }
 }
 </script>
 
@@ -43,7 +71,7 @@ header{
     width: 1140xp;
     top: 50%;
     left: 50%;
-    transform: translate(-60%, -50%);
+    transform: translate(-50%, -50%);
 }
 h1,h2,h3{
     
@@ -68,9 +96,10 @@ h1{
     text-decoration: none;
     color:white;
     border-radius: 20px;
-    width: 210px;
     text-align: center;
     margin: 30px 15px 0px 0px;
+    width: 180px;
+    font-size: 80%;
 }
 /*-------------------------------------- */
 /* color #e67e22 */
@@ -82,7 +111,6 @@ h1{
     border: 1px solid #d6c1af;  
     font-weight: 100;
     transition: background-color 0.2s, border 0.5s;
-    font-size: 90%;
 }
 .btn-full:hover,input[type=submit]:hover{
     background: #f7b731;
@@ -99,10 +127,11 @@ h1{
     border: 1px solid #dbd4ce;  
 }
 .logo-white{
-   height: 135px;
+   height: 115px;
    width: auto ;
    float: left;
-   margin-top: 20px;
+   margin: 20px  0px;
+   display: block;
 }
 .main-navigation{
     margin-top: 65px;
@@ -113,7 +142,8 @@ h1{
     display: inline-block;
     margin-left: 40px;
 }
-.main-navigation li a:link,.main-navigation li a:visited {
+.main-navigation li a:link,
+.main-navigation li a:visited {
     color: white;
     text-decoration: none;
     text-transform: uppercase;
@@ -121,9 +151,49 @@ h1{
     border-bottom: 2px solid #e67e22 transparent;
     padding: 8px 0;
     transition:  border-bottom 0.2s;
-
 }
 .main-navigation li a:active , .main-navigation li a:hover{
     border-bottom: 2px solid #e67e22;
+}
+
+
+/* ------------ the sticky nav ------------ */
+
+
+
+
+.nav-white{
+    width: 100%;
+    background-color: #fff;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+}
+.nav-white .main-navigation li a:link,
+.nav-white .main-navigation li a:visited {
+    color: #555;
+    padding: 8px 0;
+   
+}
+.nav-white .main-navigation li a:active ,
+.nav-white .main-navigation li a:hover{
+    padding-bottom: 18px;
+    border-bottom: 2px solid #e67e22;
+}
+.logo{
+   height: 50px;
+   width: auto ;
+   float: left;
+   margin: 5px  0px;
+   display: none;
+}
+.nav-white .logo {
+    display: block;
+}
+.nav-white .logo-white {
+    display: none;
+}
+.nav-white .row ul {
+    margin-top: 15px;
 }
 </style>
