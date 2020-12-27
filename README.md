@@ -1,4 +1,4 @@
-# compass-project
+# 
 
 ## Project setup
 ```
