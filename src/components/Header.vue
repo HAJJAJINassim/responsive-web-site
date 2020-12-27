@@ -10,14 +10,15 @@
                 <li><a href="">Our cities</a></li>
                 <li><a href="">Sign up</a></li>
             </ul>
+            <a @click="ButtonShowHideNav" class ="mobile-icon" href="#"><i class="fas fa-bars"></i></a>
 
         </div>
     </nav>
     
     <div class="hero-text-box">
         <h1>Goodbye junk food.<br> Hello super healthy meals.</h1>
-        <a class="btn btn-full" href="#">I’m hungry</a>
-        <a class="btn btn-ghost" href="#">Show me more</a>
+        <a class="btn btn-full"  @click="scrollto('section-plans')" href="#">I’m hungry</a>
+        <a class="btn btn-ghost" @click="scrollto('section-features')" href="#">Show me more</a>
     </div>
 </header>
   
@@ -28,30 +29,57 @@
 export default {
     data:function(){
         return {
-            sticky:false
+            sticky:false,
+            Showhidenav:false
         };
     },
     methods:{
+        // display and hide the sticky top Bar
         handlScroll(){
            var topScreen = window.pageYOffset;
             /*console.log(window.innerHeight);*/
-            var seuil =document.getElementsByClassName("section-features")[0].offsetTop;
-            if(topScreen > seuil){
+            var seuil = document.querySelector(".section-features").offsetTop;
+            if(topScreen >= seuil){
                 this.sticky=true;
             }else{
                 this.sticky=false;
             }
-            console.log(this.sticky);
+        },
+
+        //scroll to a section
+        scrollto(section){
+             window.scrollTo(0,document.querySelector("."+section).offsetTop);
+        },
+        ShowHideNav(){ // triggers to show hide the nav depends on the width
+            if(document.querySelector("body").offsetWidth < 768){
+                document.querySelector(".main-navigation").style.display="none"
+                 this.Showhidenav=false;
+
+            }else{
+                document.querySelector(".main-navigation").style.display="block"
+            }
+        },
+        ButtonShowHideNav(){
+            if(this.Showhidenav==true){
+                 document.querySelector(".main-navigation").style.display="none";
+                 this.Showhidenav=false;
+            }else{
+                 document.querySelector(".main-navigation").style.display="block";
+                 this.Showhidenav=true;
+            }
         }
     },
 
     created:function(){
         console.log("Created");
         window.addEventListener('scroll',this.handlScroll);
+        window.addEventListener('resize', this.ShowHideNav);
         console.log(window.pageYOffset);
+        this.ShowHideNav();
     },
     destroyed:function(){
         window.removeEventListener('scroll',this.handlScroll);
+        window.removeEventListener('scroll',this.ShowHideNav);
     }
 }
 </script>
@@ -155,12 +183,29 @@ h1{
 .main-navigation li a:active , .main-navigation li a:hover{
     border-bottom: 2px solid #e67e22;
 }
+.mobile-icon{
+    font-size: 200%;
+    color: #fff;
+    display: none;
+    width: 50px;
+    height: 50px;
+    float: right;
+    margin-top: 45px;
+   
+
+}
 
 
 /* ------------ the sticky nav ------------ */
 
 
-
+.logo{
+   height: 50px;
+   width: auto ;
+   float: left;
+   margin: 5px  0px;
+   display: none;
+}
 
 .nav-white{
     width: 100%;
@@ -168,6 +213,7 @@ h1{
     position: fixed;
     top: 0px;
     left: 0px;
+    z-index: 1;
 }
 .nav-white .main-navigation li a:link,
 .nav-white .main-navigation li a:visited {
@@ -177,16 +223,10 @@ h1{
 }
 .nav-white .main-navigation li a:active ,
 .nav-white .main-navigation li a:hover{
-    padding-bottom: 18px;
-    border-bottom: 2px solid #e67e22;
+    padding-bottom: 19px;
+    border-bottom: 3px solid #e67e22;
 }
-.logo{
-   height: 50px;
-   width: auto ;
-   float: left;
-   margin: 5px  0px;
-   display: none;
-}
+
 .nav-white .logo {
     display: block;
 }
@@ -196,4 +236,25 @@ h1{
 .nav-white .row ul {
     margin-top: 15px;
 }
+/*
+.nav-white .row ul li {
+    display: block;
+}
+.nav-white .row ul {
+    display: block;
+    float: left;
+}
+.nav-white .mobile-icon{
+     font-size: 200%;
+    color: #000;
+    display: block;
+    border: 2px solid #000;
+    width: 50px;
+    height: 50px;
+    float: right;
+    margin-top: 45px;
+    padding-left:9px ;
+    padding-top: 6px;
+}*/
+
 </style>

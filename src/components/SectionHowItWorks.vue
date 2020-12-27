@@ -1,5 +1,5 @@
 <template>
-      <section class="how-work">
+      <section id="tr" class="how-work">
       <div class="row">
          <h2>
         How it works &mdash; simple 1, 2, 3 

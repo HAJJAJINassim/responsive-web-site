@@ -1,12 +1,12 @@
 <template>
     <section class="section-features">
-      <div class="row">
+      <div  class="row">
         <h2>Get food fast &mdash; not fast food.</h2>
         <p class="long-copy">
           Hello, we’re Omnifood, your new premium food delivery service. We know you’re always busy. No time for cooking. So let us take care of that, we’re really good at it, we promise!
         </p>
       </div>
-        <div class="row">
+        <div class="row animate__animated" v-bind:class="{'animate__fadeInUp':fadeUp}" >
           <div class="col span-1-of-4 box-inside">
             <h3>
               Up to 365 days/year
@@ -39,6 +39,25 @@
 
 <script>
 export default {
+  data(){
+    return {
+      fadeUp:false
+    }
+  },
+  methods:{
+    fadeup:function () {
+        var topScreen = window.pageYOffset;
+        /*console.log(window.innerHeight);*/
+        var seuil = document.querySelector(".section-features").offsetTop;
+        if(topScreen >= seuil){
+            this.fadeUp=true;
+        }
+    }
+  },
+  created:function () {
+      window.addEventListener('scroll',this.fadeup);
+      console.log(window.pageYOffset);
+  }
 
 }
 </script>
@@ -83,6 +102,10 @@ h3{
 .box-inside{
   line-height: 145%;
   font-size: 90%;
+}
+/* for the faded animation */
+.animate__animated{
+  opacity: 0;
 }
 
 </style>

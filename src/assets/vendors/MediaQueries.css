@@ -8,12 +8,18 @@
     .row{
         padding: 0% 2% ;
     }
+    .mobile-icon{
+        display: none;
+    }
+
+    
    
 }
 
 
 /* small tablets to big tablets from 768px to 1023*/
 @media only screen and (max-width:1023px){
+    
     body{
         font-size: 17px;
     }
@@ -68,6 +74,12 @@
         width: 80%;
         margin: 0 20%;
     }
+    .nav-white .main-navigation li a:active ,
+.nav-white .main-navigation li a:hover{
+    padding-bottom: 21px;
+    border-bottom: 3px solid #e67e22;
+}
+  
 }
 
 
@@ -91,9 +103,27 @@
     h2{
         font-size: 140%;
     }
-    .main-navigation{
-        display: none;
+    .main-navigation li{
+        display: block;
+        margin-bottom: 15px;
     }
+    .main-navigation{
+        margin-top: 20px;;
+        display: block;
+        float: left;
+    }
+    .main-navigation li a:link,
+    .main-navigation li a:visited {
+       
+        border-bottom: 0;
+        
+    }
+
+
+
+
+
+
     .long-copy{
         width: 100%;
         margin-left: 0%;
@@ -125,7 +155,18 @@
         width: 90%;
         margin-left: 5%;
     }
-   
+    .mobile-icon{
+        display: block;
+    }
+    .nav-white .main-navigation li a:active ,
+    .nav-white .main-navigation li a:hover{
+    padding-bottom: 18px;
+    border-bottom: 0px ;
+    }
+    
+    .nav-white .mobile-icon{
+        color: #555;
+    }
    
    
 }
@@ -140,6 +181,17 @@
     section{
         padding: 25px 0px;
         
+    }
+    .mobile-icon{
+        display: block;
+    }
+
+    .nav-white .row ul li {
+        display: block;
+    }
+    .nav-white .row ul {
+        display: block;
+        float: left;
     }
 }
 
